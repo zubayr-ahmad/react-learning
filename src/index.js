@@ -1,15 +1,24 @@
 import React from 'react'
 import ReactDom from 'react-dom'
 
-// Capitalising the function names tell react that this is a component
-function Greeting(){
-  return (<div>
-    <h1>This is my first component</h1>
-  </div>)
+// JSX Rules
+// return single element
+// div / section / article or Fragment
+// use camelCase for html attribute
+// className instead of class
+// close every element <img/>
+// formatting -> better to use parenthesis in return
+
+function Greeting() {
+  return (
+    <>
+      <div className='container'>
+        <h1 onClick={()=>{}}>This is my first component</h1>
+      </div>
+    </>
+  );
 }
 
-// const Greeting = () => {
-//   return React.createElement('div', {},React.createElement('h1',{},"this is the first component again..."))
-// }
-ReactDom.render(<Greeting/>,document.getElementById('root'));
+
+ReactDom.render(<Greeting />, document.getElementById('root'));
 
