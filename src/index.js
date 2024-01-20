@@ -1,11 +1,21 @@
 import React from 'react'
 import ReactDom from 'react-dom'
 
-// Nested components, React tools
+// CSS
+import './index.css'
 
 function Greeting() {
   return (
-    <section>
+    <section className='booklist'>
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
       <Book />
       <Book />
       <Book />
@@ -16,7 +26,7 @@ function Greeting() {
 
 const Book = () => {
   return (
-    <article>
+    <article className='book'>
       <Image />
       <Title></Title>
       <Author/>
