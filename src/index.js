@@ -5,7 +5,7 @@ import ReactDom from 'react-dom/client'
 import './index.css'
 //  setup vars
 const firstBook = {
-  img: "https://m.media-amazon.com/images/I/61Wgw1NE0xL._AC_UL320_.jpg",
+  img: "./images/book1.jpg",
   title: "Sales Activation: Create needs and fulfill demands at the point-of-purchase",
   author: 'Baldur Gudgeirsson'
 }
@@ -24,12 +24,13 @@ function Greeting() {
     </section>
   );
 }
-const Book = (props) => {
+const Book = ({ img, title, author }) => {
+  // const {img, title, author} = props
   return (
     <article className='book'>
-      <img src={props.img} alt="book" />
-      <h1>{props.title}</h1>
-      <h4>{props.author}</h4>
+      <img src={img} alt="book" />
+      <h1>{title}</h1>
+      <h4>{author}</h4>
       <p></p>
     </article>
   );
