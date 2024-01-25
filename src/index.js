@@ -19,19 +19,24 @@ const secondBook = {
 function Greeting() {
   return (
     <section className='booklist'>
-      <Book img={firstBook.img}  title={firstBook.title} author={firstBook.author} />
+      <Book img={firstBook.img}  title={firstBook.title} author={firstBook.author} >
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad sapiente quae incidunt. Itaque libero iusto, deserunt, tempore vero porro nihil aspernatur, tempora eum nulla earum! Veniam, dolore? Quia, impedit? Ratione!</p>
+        <button>Click me</button>
+      </Book>
       <Book img={secondBook.img} title={secondBook.title} author={secondBook.author} />
     </section>
   );
 }
-const Book = ({ img, title, author }) => {
-  // const {img, title, author} = props
+const Book = (props) => {
+  // children is a special prop
+  const { img, title, author, children } = props
+  console.log(props)
   return (
     <article className='book'>
       <img src={img} alt="book" />
       <h1>{title}</h1>
       <h4>{author}</h4>
-      <p></p>
+      {children}
     </article>
   );
 };
