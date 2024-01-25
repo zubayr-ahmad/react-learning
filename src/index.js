@@ -5,28 +5,34 @@ import ReactDom from 'react-dom/client'
 import './index.css'
 //  setup vars
 const firstBook = {
-  img: "./images/book1.jpg",
-  title: "Sales Activation: Create needs and fulfill demands at the point-of-purchase",
-  author: 'Baldur Gudgeirsson'
-}
+  author: 'Jordan Moore',
+  title: 'Interesting Facts For Curious Minds',
+  img: './Images/book1.jpg',
+};
 const secondBook = {
-  img: "https://images-na.ssl-images-amazon.com/images/I/917Bc9C1MlL._AC_UL600_SR600,400_.jpg",
-  title: "Iron Flame (The Empyrean, 2)",
-  author: 'Rebecca Yarros'
-}
+  author: 'James Clear',
+  title: 'Atomic Habits',
+  img: 'https://images-na.ssl-images-amazon.com/images/I/81wgcld4wxL._AC_UL900_SR900,600_.jpg',
+};
 
-
-function Greeting() {
+function BookList() {
   return (
     <section className='booklist'>
-      <Book img={firstBook.img}  title={firstBook.title} author={firstBook.author} >
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad sapiente quae incidunt. Itaque libero iusto, deserunt, tempore vero porro nihil aspernatur, tempora eum nulla earum! Veniam, dolore? Quia, impedit? Ratione!</p>
-        <button>Click me</button>
-      </Book>
-      <Book img={secondBook.img} title={secondBook.title} author={secondBook.author} />
+      <Book
+        author={firstBook.author}
+        title={firstBook.title}
+        img={firstBook.img}
+      />
+      <Book
+        author={secondBook.author}
+        title={secondBook.title}
+        img={secondBook.img}
+      />
     </section>
   );
 }
+
+
 const Book = (props) => {
   // children is a special prop
   const { img, title, author, children } = props
@@ -42,5 +48,5 @@ const Book = (props) => {
 };
 
 const root = ReactDom.createRoot(document.getElementById('root'));
-root.render(<Greeting />)
+root.render(<BookList />)
 
