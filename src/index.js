@@ -1,5 +1,5 @@
 import React from 'react'
-import ReactDom from 'react-dom'
+import ReactDom from 'react-dom/client'
 
 // CSS
 import './index.css'
@@ -35,6 +35,6 @@ const Book = (props) => {
   );
 };
 
-
-ReactDom.render(<Greeting />, document.getElementById('root'));
+const root = ReactDom.createRoot(document.getElementById('root'));
+root.render(<Greeting />)
 
