@@ -17,21 +17,24 @@ const books = [
   }
 ]
 
-const names = ['jhon','peter','susan']
-const newNames = names.map((name)=>{
-  return <h1>{name}</h1>;
-})
-console.log(newNames);
+
 
 function BookList() {
   return (
-    <section className='booklist'>{newNames}</section>
+    <section className='booklist'>
+      {books.map((book) => {
+        const { img, title, author } = book
+        return (
+          <Book img={img} title={title} author={author} />
+        )
+      })}
+    </section>
   );
 }
 
 
 const Book = (props) => {
-  // children is a special prop
+
   const { img, title, author } = props
   console.log(props)
   return (
