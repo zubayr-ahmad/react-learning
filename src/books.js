@@ -1,15 +1,24 @@
+import img01 from './Images/book01.jpg';
+import img02 from './Images/book02.jpg';
+import img03 from './Images/book03.jpg';
 export const books = [
     {
-        author: 'Jordan Moore',
-        title: 'Interesting Facts For Curious Minds',
-        img: './Images/book1.jpg',
+        author: 'Jamie Oliver',
+        title: '5 Ingredients Mediterranean',
+        img: img01,
         id: 1
+    },
+    {
+        author: 'Sarah J. Maas',
+        title: 'House of Flame and Shadow',
+        img: img02,
+        id: 2
     },
     {
         author: 'James Clear',
         title: 'Atomic Habits',
-        img: 'https://images-na.ssl-images-amazon.com/images/I/81wgcld4wxL._AC_UL900_SR900,600_.jpg',
-        id: 2
+        img: img03,
+        id: 3
     }
 ]
 // export default books
