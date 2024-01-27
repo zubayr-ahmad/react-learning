@@ -9,7 +9,7 @@ const books = [
     author: 'Jordan Moore',
     title: 'Interesting Facts For Curious Minds',
     img: './Images/book1.jpg',
-    id:1
+    id: 1
   },
   {
     author: 'James Clear',
@@ -20,10 +20,10 @@ const books = [
 ]
 
 
-
 function BookList() {
   return (
     <section className='booklist'>
+      <EventExample />
       {books.map((book) => {
         return (
           <Book {...book} key={book.id} />
@@ -33,15 +33,40 @@ function BookList() {
   );
 }
 
+const EventExample = () => {
+  const handleFormInput = (e) => {
+    // console.log(e);
+    console.log("target",e.target);
+    console.log("value",e.target.value);
+    console.log("name",e.target.name);
+  };
+  const handleButtonClick = () => {
+    alert('button clicked')
+  };
+  const handleFormSubmission = (e) => {
+    e.preventDefault();
+    console.log("form submitted");
+  };
+
+  return (
+    <section>
+      <form onSubmit={handleFormSubmission}>
+        <h2>Typical Form</h2>
+        <input type="text" name="product" onChange={handleFormInput} style={{ margin: "1rem 0" }} />
+      </form>
+      <button onClick={handleButtonClick}>Click me</button>
+    </section>
+  )
+}
+
 const Book = (props) => {
   const { img, title, author } = props
-  console.log(props)
+  // console.log(props)
   return (
     <article className='book'>
       <img src={img} alt="book" />
       <h1>{title}</h1>
       <h4>{author}</h4>
-      
     </article>
   );
 };
