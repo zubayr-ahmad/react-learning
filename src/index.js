@@ -21,11 +21,15 @@ const books = [
 
 
 function BookList() {
+  const someValue = "shakeAndBake";
+  const displayValue = () => {
+    console.log(someValue);
+  };
   return (
     <section className='booklist'>
       {books.map((book) => {
         return (
-          <Book {...book} key={book.id} />
+          <Book {...book} key={book.id} displayValue={displayValue}/>
         )
       })}
     </section>
@@ -34,16 +38,14 @@ function BookList() {
 
 
 const Book = (props) => {
-  const { img, title, author } = props
+  const { img, title, author, displayValue } = props
   // console.log(props)
-  const displayTitle = () =>{
-    console.log(title)
-  };
+  
   return (
     <article className='book'>
       <img src={img} alt="book" />
       <h1>{title}</h1>
-      <button onClick={displayTitle}>display title</button>
+      <button onClick={displayValue}>Click Me</button>
       <h4>{author}</h4>
     </article>
   );
