@@ -42,12 +42,16 @@ const Book = (props) => {
   const { img, title, author, getBook, id } = props
   // console.log(props)
   // getBook(2);
+  function getSingleBook(){
+    getBook(id)
+  };
   return (
     <article className='book'>
       <img src={img} alt="book" />
       <h1>{title}</h1>
-      {/* if we write like this: getBook(id) it runs immediatly and not runs when we clicks button  */}
-      <button onClick={getBook(id)}>Find Book</button>
+      {/* Passing the reference will solve the bug */}
+      {/* <button onClick={getSingleBook}>Find Book</button> */}
+      <button onClick={()=>getBook(id)}>Find Book</button>
       <h4>{author}</h4>
     </article>
   );
