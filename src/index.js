@@ -21,15 +21,16 @@ const books = [
 
 
 function BookList() {
-  const someValue = "shakeAndBake";
-  const displayValue = () => {
-    console.log(someValue);
+  function getBook(id){
+    const book_found = books.find((book) => book.id === id)
+    console.log(book_found)
   };
+
   return (
     <section className='booklist'>
       {books.map((book) => {
         return (
-          <Book {...book} key={book.id} displayValue={displayValue}/>
+          <Book {...book} key={book.id} getBook={getBook}/>
         )
       })}
     </section>
@@ -38,14 +39,15 @@ function BookList() {
 
 
 const Book = (props) => {
-  const { img, title, author, displayValue } = props
+  const { img, title, author, getBook, id } = props
   // console.log(props)
-  
+  // getBook(2);
   return (
     <article className='book'>
       <img src={img} alt="book" />
       <h1>{title}</h1>
-      <button onClick={displayValue}>Click Me</button>
+      {/* if we write like this: getBook(id) it runs immediatly and not runs when we clicks button  */}
+      <button onClick={getBook(id)}>Find Book</button>
       <h4>{author}</h4>
     </article>
   );
