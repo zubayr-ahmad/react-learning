@@ -1,12 +1,12 @@
-import Starter from "./tutorial/03-conditional-rendering/starter/05-short-circuit-examples";
-import Final from "./tutorial/03-conditional-rendering/final/05-short-circuit-examples";
+import Starter from "./tutorial/03-conditional-rendering/starter/07-user-challenge";
+import Final from "./tutorial/03-conditional-rendering/final/07-user-challenge";
 
 function App() {
 
   return (
     <div>
       <Starter />
-      {/* <Final />  */}
+      <Final /> 
     </div>
     
   );
