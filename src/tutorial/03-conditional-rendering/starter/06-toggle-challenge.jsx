@@ -1,5 +1,21 @@
+import { useState } from "react";
 const ToggleChallenge = () => {
-  return <h2>toggle challenge</h2>;
+  const [isShowing, setIsShowing] = useState(false);
+
+  const toggle_display = () => {
+    setIsShowing(!isShowing);
+  };
+
+  
+  return (
+  <div>
+      <button className="btn" onClick={toggle_display}>{isShowing ? "Hide" : "Show"}</button>
+      {isShowing ? <AlertComponent /> : undefined}
+  </div>
+  );
+};
+const AlertComponent = () => {
+  return <h2 className="alert alert-danger">Alert</h2>;
 };
 
 export default ToggleChallenge;

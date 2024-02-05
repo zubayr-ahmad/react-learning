@@ -10,6 +10,12 @@ const MultipleReturnsFetchData = () => {
     const fetchData = async () => {
       try {
         const prom = await fetch(url)
+        if (!prom.ok) {
+          setIsError(true);
+          setIsLoading(false);
+          return;
+        }
+        console.log(prom.ok);
         const user = await prom.json()
         setUser(user)
         console.log(user);
