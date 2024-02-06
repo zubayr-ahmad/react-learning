@@ -1,9 +1,11 @@
-import Example from "./tutorial/04-project-structure/starter/Example";
+import Start from "./tutorial/05-leverage-javascript/starter/List";
+import Final from "./tutorial/05-leverage-javascript/final/List";
 function App() {
-
+  
   return (
     <div className="container">
-      <Example></Example>
+      <Start />
+      {/* <Final /> */}
     </div>
     
   );
