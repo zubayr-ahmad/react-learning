@@ -11,14 +11,13 @@ const CleanupFunction = () => {
 
 const ExtraComp = () =>{
   useEffect(()=>{
-    console.log('Extra component mounted');
-    const intID = setInterval(() => {
-      console.log('Hello world');
-    }, 1000);
+    const someFunc = () => {
+      console.log('some function');
+    }
+    window.addEventListener('scroll', someFunc);
     // return the cleanup function
     return () => {
-      console.log('Extra component unmounted');
-      clearInterval(intID);
+      window.removeEventListener('scroll', someFunc);
     }
 
   },[]);
