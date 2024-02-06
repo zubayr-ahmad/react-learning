@@ -1,9 +1,10 @@
-import Navbar from "./tutorial/04-project-structure/starter/Navbar";
+import { Home, About as Contact} from './tutorial/04-project-structure/starter/Pages';
 function App() {
 
   return (
     <div className="container">
-      <Navbar />
+      <Home />
+      <Contact />
     </div>
     
   );
