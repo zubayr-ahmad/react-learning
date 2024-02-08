@@ -1,5 +1,5 @@
-import Start from "./tutorial/06-forms/starter/04-other-inputs";
-import Final from "./tutorial/06-forms/final/04-other-inputs";
+import Start from "./tutorial/06-forms/starter/05-form-data";
+import Final from "./tutorial/06-forms/final/05-form-data";
 function App() {
   return (
     <div className="container">
