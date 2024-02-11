@@ -1,6 +1,6 @@
 import React from 'react'
 import UserContainer from './userContainer';
-function NavLinks({user, logout}) {
+function NavLinks() {
     // console.log(user,logout);
     return (
         <div className='nav-container'>
@@ -8,7 +8,7 @@ function NavLinks({user, logout}) {
                 <li><a href="#">Home</a></li>
                 <li><a href="#">About</a></li>
             </ul>
-            <UserContainer user={user} logout={logout} />
+            <UserContainer />
         </div>
     )
 }

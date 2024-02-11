@@ -1,7 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { NavbarContext } from './Navbar'
 
-function UserContainer({ user, logout }) {
+function UserContainer() {
+    const value = useContext(NavbarContext)
     // console.log(user, logout);
+    console.log(value);
+    const { user, logout } = value
+
     return (
         <div className='user-container'>
             {user ? (<>
