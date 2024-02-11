@@ -1,8 +1,8 @@
-import Start from "./tutorial/08-custom-hooks/starter/02-fetch-data";
-import Final from "./tutorial/07-useRef/final/01-useRef-basics";
+import Start from "./tutorial/09-context-api/starter/Navbar";
+// import Final from "./tutorial/07-useRef/final/01-useRef-basics";
 function App() {
   return (
-    <div className="container">
+    <div>
       <Start />
       {/* <Final /> */}
     </div>
