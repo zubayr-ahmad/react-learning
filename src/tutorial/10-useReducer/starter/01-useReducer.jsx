@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { data } from '../../../data';
 const ReducerBasics = () => {
   const [people, setPeople] = React.useState(data);
-
   const removeItem = (id) => {
     let newPeople = people.filter((person) => person.id !== id);
     setPeople(newPeople);
   };
+
   return (
     <div>
       {people.map((person) => {
@@ -18,13 +18,21 @@ const ReducerBasics = () => {
           </div>
         );
       })}
-      <button
+      {people.length != 0 ? <button
         className='btn'
         style={{ marginTop: '2rem' }}
         onClick={() => setPeople([])}
       >
         clear items
-      </button>
+      </button> :
+      <button
+        className='btn'
+        style={{ marginTop: '2rem' }}
+        onClick={() => setPeople(data)}>
+          Reset
+        </button>
+      }
+      
     </div>
   );
 };
