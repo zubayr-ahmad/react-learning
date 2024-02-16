@@ -1,4 +1,4 @@
-import Start from "./tutorial/10-useReducer/starter/01-useReducer";
+import Start from "./tutorial/11-performance/starter/03-hooks";
 // import Final from "./tutorial/07-useRef/final/01-useRef-basics";
 function App() {
   return (
