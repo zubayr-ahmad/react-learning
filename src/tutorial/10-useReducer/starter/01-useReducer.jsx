@@ -5,15 +5,34 @@ const defaultState = {
   isLoading:false,
 };
 
+const CLEAR_LIST = 'CLEAR_LIST';
+const REMOVE_ITEM = 'REMOVE_ITEM';
+const RESET_LIST = 'RESET_LIST';
+
 // inside this we will control our state
 function reducer(state, action) {
-  if(action.type === "CLEAR_LIST"){
+  if(action.type === CLEAR_LIST){
     // we first spread out all the values from the previous state and then
     // we just change only that value which we want to change. Rest of 
     // the values will remain same.
     return {...state, people:[]}
   }
+  else if(action.type === RESET_LIST){
+    return {...state, people:data}
+  }
 
+  else if (action.type === REMOVE_ITEM) {
+    const newPeople = state.people.filter(
+      (person) => person.id !== action.payload.id
+    );
+    return { ...state, people: newPeople };
+  }
+
+  // to avoid returning undefined, we can return the state itself but
+  // it is better through error so we can debug it easily.
+  // return state
+
+  throw new Error(`No Matching "${action.type}" - action type`);
 }
 
 
@@ -22,18 +41,17 @@ const ReducerBasics = () => {
 
 
   const removeItem = (id) => {
-    // let newPeople = people.filter((person) => person.id !== id);
-    // setPeople(newPeople);
+    dispatch({type:REMOVE_ITEM,payload:{id}})
+
   };
   const clearList = () => {
-    dispatch({type:'CLEAR_LIST'})
-    // setPeople([]);
+    dispatch({type:CLEAR_LIST})
   }
 
   const resetList = () => {
-    // setPeople(data);
+    dispatch({type:RESET_LIST})
   }
-console.log(state);
+// console.log(state);
   return (
     <div>
       {state.people.map((person) => {
@@ -59,7 +77,6 @@ console.log(state);
           Reset
         </button>
       }
-      
     </div>
   );
 };
