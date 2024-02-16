@@ -1,9 +1,15 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useState, useMemo } from 'react';
 import { data } from '../../../../data';
 import List from './List';
+import slowFunction from './slowFunction';
 const LowerState = () => {
   const [people, setPeople] = useState(data);
   const [count, setCount] = useState(0);
+  // useMemo is used to prevent the slowFunction from being re-run on every render
+  // it will save the value of slowFunction and only re-run it when the dependencies
+  // change.
+  const value = useMemo(()=>slowFunction(),[])
+  console.log(value)
 
   // useCallback is used to prevent the function from being re-created on every render
   // This is useful when passing the function to a child component. Otherwise, the 
