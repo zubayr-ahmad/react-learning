@@ -2,10 +2,17 @@ import { useState, useReducer } from 'react';
 import { data } from '../../../data';
 const defaultState = {
   people:data,
+  isLoading:false,
 };
 
 // inside this we will control our state
-function reducer() {
+function reducer(state, action) {
+  if(action.type === "CLEAR_LIST"){
+    // we first spread out all the values from the previous state and then
+    // we just change only that value which we want to change. Rest of 
+    // the values will remain same.
+    return {...state, people:[]}
+  }
 
 }
 
@@ -19,6 +26,7 @@ const ReducerBasics = () => {
     // setPeople(newPeople);
   };
   const clearList = () => {
+    dispatch({type:'CLEAR_LIST'})
     // setPeople([]);
   }
 
