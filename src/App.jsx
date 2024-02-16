@@ -1,4 +1,4 @@
-import Start from "./tutorial/11-performance/starter/03-hooks";
+import Start from "./tutorial/11-performance/starter/04-react-18";
 // import Final from "./tutorial/07-useRef/final/01-useRef-basics";
 function App() {
   return (
